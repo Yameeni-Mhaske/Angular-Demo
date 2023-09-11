@@ -1,0 +1,18 @@
+import { TestBed } from '@angular/core/testing';
+import { EmailComponent } from './email.component';
+describe('EmailComponent', () => {
+    let component;
+    let fixture;
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [EmailComponent]
+        });
+        fixture = TestBed.createComponent(EmailComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+});
+//# sourceMappingURL=email.component.spec.js.map
