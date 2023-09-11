@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card">
+        <form (ngSubmit)="doSubmitForm()">
+            <h1>Compose Email</h1>
+            <mat-form-field class="field" appearance="outline">
+                <mat-label>To</mat-label>
+                <input name="To" [(ngModel)]="data.to"  matInput required>
+                <mat-error *ngIf="!data.to">This Field is required</mat-error>
+            </mat-form-field>
+               
+            <!-- <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                       placeholder="Ex. pat@example.com">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field> -->
+            <mat-form-field class="field"appearance="outline">
+                <mat-label>Subject</mat-label>
+                <input name="Subject" [(ngModel)]="data.subject" matInput required>
+                <mat-error *ngIf="!data.subject">Subject is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field"appearance="outline">
+                <mat-label>Enter your message</mat-label>
+                <textarea name="Enter Message" [(ngModel)]="data.message" matInput required></textarea>
+                <mat-error *ngIf="!data.message">Message is required</mat-error>
+            </mat-form-field>
+            <div class="text-center">
+                <button type="submit" mat-raised-button color="primary">Submit</button>
+                <button type="reset" mat-raised-button color="accent">Reset</button>
+            </div>
+
+        </form>
+        {{data | json}}
+        
+    </div>
+
+</div>
